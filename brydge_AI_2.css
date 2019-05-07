@@ -1,0 +1,76 @@
+.licytacja {
+  display: none;
+  padding: 30px 0;
+  margin-top: 20vh;
+}
+
+.osoby {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+}
+
+.osoba {
+  height: 80px;
+  font-size: 40px;
+  border: 6px solid #451717;
+  background-color: #cf6969;
+  margin-bottom: 20px;
+  line-height: 80px;
+}
+
+#osoba_N {
+  position: inherit;
+  z-index: 300;
+}
+
+.glos {
+  position: absolute;
+  top: 115px;
+  left: 0;
+  z-index: 250;
+  display: none;
+}
+
+.wysokosc_g {
+  box-sizing: border-box;
+  float: left;
+  background-color: #fff;
+  width: calc(100vw * 0.85 * 0.8 / 8);
+  color: #c34f4f;
+  height: 90px;
+  line-height: 90px;
+  font-size: 30px;
+  border-right: 3px dashed #451717;
+  border-bottom: 3px dashed #451717;
+  font-weight: 900;
+}
+
+.wysokosc_g:hover {
+  color: #751b1b;
+}
+
+.model {
+  position: inherit;
+  transform: translateY(-85px);
+  z-index: 200;
+}
+
+.model_g {
+  box-sizing: border-box;
+  float: left;
+  background-color: #fff;
+  width: calc(100vw * 0.85 * 0.8 / 5);
+  color: #c34f4f;
+  height: 90px;
+  line-height: 90px;
+  font-size: 30px;
+  border-right: 3px dashed #451717;
+  border-bottom: 3px dashed #451717;
+}
+
+.rozmowa {
+  font-size: 45px;
+  transform: translateY(300px);
+}

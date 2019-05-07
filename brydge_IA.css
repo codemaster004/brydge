@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background-color: #303030;
+  font-family: sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+.popup {
+  width: 85vw;
+  margin-top: 20vh;
+  margin-left: 50vw;
+  transform: translate(-50%, -50%);
+  background-color: #c34f4f;
+  border: 10px solid #751b1b;
+  display: block;
+}
+
+.info {
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+.wynik {
+  font-size: 70px;
+}
+
+ol {
+  list-style: none;
+  padding: 30px 0;
+  height: 70px;
+}
+
+ol > li {
+  float: left;
+  width: 33%;
+  height: 70px;
+  line-height: 70px;
+  border-right: 3px dashed #451717;
+}
+
+ol > li:hover p {
+  background-color: #cf6969;
+  color: #451717;
+}
+
+ol > li:first-child {
+  margin-left: 12%;
+  border-left: 3px dashed #451717;
+}
+
+ol > li:nth-child(2) {
+  width: 10%;
+}
+
+ol > li p {
+  font-size: 35px;
+}
+
+ol > li:hover > ul {
+  display: inherit;
+}
+
+ol > li > ul {
+  list-style: none;
+  display: none;
+  height: 70px;
+}
+
+ol > li > ul > li {
+  font-size: 40px;
+  background-color: #cf6969;
+  border-bottom: 3px dashed #451717;
+  position: relative;
+  z-index: 200;
+}
+
+ol > li > ul > li:hover {
+  background-color: #c34f4f;
+}
+
+ol > li > ul > li:first-child {
+  border-top: 3px dashed #451717;
+
+}
+
+.wprowadz {
+  display: none;
+  box-sizing: border-box;
+  width: 60%;
+  height: 80px;
+  background-color: #cf6969;
+  font-size: 40px;
+  border: 5px solid #fff;
+  margin: 0 auto;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+
+.wprowadz:hover {
+  color: #751b1b;
+}

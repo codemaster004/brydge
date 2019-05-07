@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My brydge IA</title>
+  <link rel="stylesheet" href="brydge_IA.css">
+  <link rel="stylesheet" href="brydge_AI_2.css">
+
+  <style>
+    /*    Plik numer 1*/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: auto;
+      background-color: #303030;
+      font-family: sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+
+    .popup {
+      width: 85vw;
+      margin-top: 20vh;
+      margin-left: 50vw;
+      transform: translate(-50%, -50%);
+      background-color: #c34f4f;
+      border: 10px solid #751b1b;
+      display: block;
+    }
+
+    .info {
+      font-size: 50px;
+      padding: 20px 0;
+    }
+
+    .wynik {
+      font-size: 70px;
+    }
+
+    ol {
+      list-style: none;
+      padding: 30px 0;
+      height: 70px;
+    }
+
+    ol>li {
+      float: left;
+      width: 33%;
+      height: 70px;
+      line-height: 70px;
+      border-right: 3px dashed #451717;
+    }
+
+    ol>li:hover p {
+      background-color: #cf6969;
+      color: #451717;
+    }
+
+    ol>li:first-child {
+      margin-left: 12%;
+      border-left: 3px dashed #451717;
+    }
+
+    ol>li:nth-child(2) {
+      width: 10%;
+    }
+
+    ol>li p {
+      font-size: 35px;
+    }
+
+    ol>li:hover>ul {
+      display: inherit;
+    }
+
+    ol>li>ul {
+      list-style: none;
+      display: none;
+      height: 70px;
+    }
+
+    ol>li>ul>li {
+      font-size: 40px;
+      background-color: #cf6969;
+      border-bottom: 3px dashed #451717;
+      position: relative;
+      z-index: 200;
+    }
+
+    ol>li>ul>li:hover {
+      background-color: #c34f4f;
+    }
+
+    ol>li>ul>li:first-child {
+      border-top: 3px dashed #451717;
+
+    }
+
+    .wprowadz {
+      display: none;
+      box-sizing: border-box;
+      width: 60%;
+      height: 80px;
+      background-color: #cf6969;
+      font-size: 40px;
+      border: 5px solid #fff;
+      margin: 0 auto;
+      line-height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .wprowadz:hover {
+      color: #751b1b;
+    }
+
+    /*    Plik numer 2*/
+
+    .licytacja {
+      display: none;
+      padding: 30px 0;
+      margin-top: 20vh;
+    }
+
+    .osoby {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .osoba {
+      height: 80px;
+      font-size: 40px;
+      border: 6px solid #451717;
+      background-color: #cf6969;
+      margin-bottom: 20px;
+      line-height: 80px;
+    }
+
+    #osoba_N {
+      position: inherit;
+      z-index: 300;
+    }
+
+    .glos {
+      position: absolute;
+      top: 115px;
+      left: 0;
+      z-index: 250;
+      display: none;
+    }
+
+    .wysokosc_g {
+      box-sizing: border-box;
+      float: left;
+      background-color: #fff;
+      width: calc(100vw * 0.85 * 0.8 / 8);
+      color: #c34f4f;
+      height: 90px;
+      line-height: 90px;
+      font-size: 30px;
+      border-right: 3px dashed #451717;
+      border-bottom: 3px dashed #451717;
+      font-weight: 900;
+    }
+
+    .wysokosc_g:hover {
+      color: #751b1b;
+    }
+
+    .model {
+      position: inherit;
+      transform: translateY(-85px);
+      z-index: 200;
+    }
+
+    .model_g {
+      box-sizing: border-box;
+      float: left;
+      background-color: #fff;
+      width: calc(100vw * 0.85 * 0.8 / 5);
+      color: #c34f4f;
+      height: 90px;
+      line-height: 90px;
+      font-size: 30px;
+      border-right: 3px dashed #451717;
+      border-bottom: 3px dashed #451717;
+    }
+
+    .rozmowa {
+      font-size: 45px;
+      transform: translateY(300px);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="popup" id="popup">
+    <p class="info" id="moja_rozmowa"></p>
+    <div class="wprowadzenie">
+      <div class="wynik" id="wynik">_ _</div>
+      <ol>
+        <li>
+          <p onclick="hover('1')">nazwa karty</p>
+          <ul id="hover1">
+            <li onclick="unhover('1'), nazwa('A')">A</li>
+            <li onclick="unhover('1'), nazwa('K')">K</li>
+            <li onclick="unhover('1'), nazwa('Q')">Q</li>
+            <li onclick="unhover('1'), nazwa('J')">J</li>
+            <li onclick="unhover('1'), nazwa('10')">10</li>
+            <li onclick="unhover('1'), nazwa('9')">9</li>
+            <li onclick="unhover('1'), nazwa('8')">8</li>
+            <li onclick="unhover('1'), nazwa('7')">7</li>
+            <li onclick="unhover('1'), nazwa('6')">6</li>
+            <li onclick="unhover('1'), nazwa('5')">5</li>
+            <li onclick="unhover('1'), nazwa('4')">4</li>
+            <li onclick="unhover('1'), nazwa('3')">3</li>
+            <li onclick="unhover('1'), nazwa('2')">2</li>
+          </ul>
+        </li>
+        <li></li>
+        <li>
+          <p onclick="hover('2')">kolor karty</p>
+          <ul id="hover2">
+            <li onclick="unhover('2'), kolor('S')">&spades;</li>
+            <li onclick="unhover('2'), kolor('H')">&hearts;</li>
+            <li onclick="unhover('2'), kolor('D')">&diams;</li>
+            <li onclick="unhover('2'), kolor('C')">&clubs;</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="wprowadz" id="wprowadz" onclick="wprowadz()">Wprowadz kartę</div>
+    </div>
+  </div>
+
+  <p class="rozmowa" id="rozmowa"></p>
+
+  <div class="popup licytacja" id="licytacja">
+    <p class="info" id="moja_rozmowa2"></p>
+    <div class="osoby">
+      <div class="glos" id="glos">
+        <div class="wysokosc">
+          <div class="wysokosc_g" onclick="model(0)">Pas</div>
+          <div class="wysokosc_g" onclick="model(1)">1</div>
+          <div class="wysokosc_g" onclick="model(2)">2</div>
+          <div class="wysokosc_g" onclick="model(3)">3</div>
+          <div class="wysokosc_g" onclick="model(4)">4</div>
+          <div class="wysokosc_g" onclick="model(5)">5</div>
+          <div class="wysokosc_g" onclick="model(6)">6</div>
+          <div class="wysokosc_g" onclick="model(7)">7</div>
+        </div>
+        <div class="model" id="model">
+          <div class="model_g" onclick="zamknij('C')">&clubs;</div>
+          <div class="model_g" onclick="zamknij('D')">&diams;</div>
+          <div class="model_g" onclick="zamknij('H')">&hearts;</div>
+          <div class="model_g" onclick="zamknij('S')">&spades;</div>
+          <div class="model_g" onclick="zamknij('Bez Atu')">Bez Atu</div>
+        </div>
+      </div>
+      <div class="osoba" id="osoba_W" onclick="glos('W')">Gracz W mowi...</div>
+      <div class="osoba" id="osoba_N" onclick="glos('N')">Gracz N mowi...</div>
+      <div class="osoba" id="osoba_E" onclick="glos('E')">Gracz E mowi...</div>
+      <div class="osoba" onclick="pomocy()">Ja mowie!</div>
+    </div>
+  </div>
+
+  <p id="cards_in" style="font-size: 40px; position: absolute; top: 50vh; left: calc(50vw - 40px);"></p>
+
+  <script>
+    function hover(numer) {
+      document.getElementById("hover" + numer).style.display = "block";
+    }
+
+    function unhover(number) {
+      document.getElementById("hover" + number).style.display = "none";
+    }
+
+  </script>
+
+  <script>
+    let c_value = "_";
+    let c_color = "";
+    let wartosc = "_";
+    let kolorki = ["S", "H", "D", "C"];
+    let wartosci_kart = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"];
+    let karty = [];
+    //    let karty = ["AS", "KS", "JS", "5S", "AH", "4H", "KC", "QC", "10C", "7C", "4C", "9D", "2D"];
+    //    let karty = ["QC", "KC", "4D", "AD", "5S", "7S", "QS", "2H", "7H", "9H", "JH", "QH", "AH"];
+    //    let karty = ["AS", "QS", "JC", "5C", "QC", "KH", "AH", "2H", "6S", "KD", "JD", "QD", "9S"];
+    let moje_karty = {
+      moje_S: [],
+      moje_H: [],
+      moje_D: [],
+      moje_C: []
+    }
+    let punkty = 0;
+    let p_m_wysokosc = "";
+    let p_m_model = "";
+    let modele = "";
+    let glos_p = "";
+    let licytacja = [];
+    let moj_glos = "";
+    let wysokosc_glosu = "";
+    let kolor_glosu = "";
+    let reka_partnera = {
+      punkty: 0,
+      kolor: "",
+      piki: 0,
+      kiery: 0,
+      kara: 0,
+      trefle: 0,
+      honory: 0
+    };
+    let bilans_p = 0;
+    let lewy = 0;
+    let meldunek = 0;
+    let moj_wybor = "";
+    let jego_wybor = "";
+    let pik = false;
+    let kier = false;
+    let karo = false;
+    let trefl = false;
+
+  </script>
+
+  <script>
+    document.getElementById("moja_rozmowa").innerHTML = "Wprowadz swoje karty.";
+
+    function nazwa(value) {
+      c_value = value;
+      document.getElementById("wynik").innerHTML = c_value + " " + wartosc;
+      if (wprowadzac() == true) {
+        document.getElementById("wprowadz").style.display = "inherit";
+      }
+    }
+
+    function kolor(color) {
+      c_color = color;
+      switch (color) {
+        case "S":
+          wartosc = "&spades;"
+          break;
+        case "H":
+          wartosc = "&hearts;"
+          break;
+        case "D":
+          wartosc = "&diams;"
+          break;
+        case "C":
+          wartosc = "&clubs;"
+          break;
+      }
+      document.getElementById("wynik").innerHTML = c_value + " " + wartosc;
+      if (wprowadzac() == true) {
+        document.getElementById("wprowadz").style.display = "inherit";
+      }
+    }
+
+    function wprowadzac() {
+      if (c_value != "_" && wartosc != "_") {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    function wprowadz() {
+      karty.push(c_value + c_color);
+      document.getElementById("wprowadz").style.display = "none";
+      console.log(karty);
+      document.getElementById("cards_in").innerHTML += c_value + wartosc + "<br>"
+      c_color = "";
+      c_value = "_";
+      wartosc = "_";
+      document.getElementById("wynik").innerHTML = "_ _";
+      if (karty.length == 13) {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("licytacja").style.display = "block";
+        ustawiamy_kary()
+        licz_pkt()
+      }
+    }
+
+  </script>
+
+  <script>
+    document.getElementById("moja_rozmowa2").innerHTML = "A teraz mow mi co licytują.";
+
+    function glos(strona) {
+      if (strona != "N") {
+        document.getElementById("osoba_" + strona).innerHTML = "A co mnie obchodzi gracz " + strona + "?!";
+      } else {
+        document.getElementById("glos").style.display = "inherit";
+        document.getElementById("glos").style.top = "200px";
+        glos_p = "";
+      }
+    }
+
+    function odnowa() {
+      document.getElementById("osoba_W").innerHTML = "Gracz W mowi..."
+      document.getElementById("osoba_E").innerHTML = "Gracz S mowi..."
+    }
+
+    function model(ile) {
+      if (ile == 0) {
+        p_m_wysokosc = "pas";
+        zamknij('');
+        return;
+      } else {
+        p_m_wysokosc = ile;
+      }
+      document.getElementById("model").style.transform = "translateY(90px)";
+    }
+
+    function zamknij(czego) {
+      modele = ""
+      p_m_model = czego;
+      switch (czego) {
+        case "S":
+          modele = "&spades;"
+          break;
+        case "H":
+          modele = "&hearts;"
+          break;
+        case "D":
+          modele = "&diams;"
+          break;
+        case "C":
+          modele = "&clubs;"
+          break;
+        case "Bez Atu":
+          modele = "Bez Atu"
+          break;
+        default:
+          modele = ""
+      }
+      document.getElementById("model").style.transform = "translateY(-85px)";
+      document.getElementById("glos").style.display = "none"
+      document.getElementById("osoba_N").innerHTML = "Gracz N mowi " + String(p_m_wysokosc) + modele;
+      glos_p = String(p_m_wysokosc) + p_m_model;
+      licytacja.push(glos_p)
+      melduje(glos_p)
+      co_i_pip_robi()
+      uzupelnij()
+    }
+
+    function ustawiamy_kary() {
+      for (let i = 0; i <= 12; i++) {
+        for (let j = 0; j <= 12; j++) {
+          if (karty[i] == wartosci_kart[j] + "S") {
+            moje_karty.moje_S.push(wartosci_kart[j]);
+          }
+          if (karty[i] == wartosci_kart[j] + "H") {
+            moje_karty.moje_H.push(wartosci_kart[j]);
+          }
+          if (karty[i] == wartosci_kart[j] + "D") {
+            moje_karty.moje_D.push(wartosci_kart[j]);
+          }
+          if (karty[i] == wartosci_kart[j] + "C") {
+            moje_karty.moje_C.push(wartosci_kart[j]);
+          }
+        }
+      }
+    }
+
+    function licz_pkt() {
+      for (let i = 0; i <= 3; i++) {
+        for (let j = 0; j <= karty.length; j++) {
+          if (karty[j] == wartosci_kart[i] + "C") {
+            punkty += (4 - i)
+          }
+          if (karty[j] == wartosci_kart[i] + "D") {
+            punkty += (4 - i)
+          }
+          if (karty[j] == wartosci_kart[i] + "H") {
+            punkty += (4 - i)
+          }
+          if (karty[j] == wartosci_kart[i] + "S") {
+            punkty += (4 - i)
+          }
+        }
+      }
+    }
+
+    function za_w_al_co(color) {
+      let za = 0;
+      for (let j = 0; j < eval("moje_karty.moje_" + color + ".length"); j++) {
+        switch (eval("moje_karty.moje_" + color + ".length")) {
+          case 2:
+            if (eval("moje_karty.moje_" + color + "[" + j + "]") == "A" || eval("moje_karty.moje_" + color + "[" + j + "]") == "K") {
+              za += 1
+            }
+            break;
+          case 3:
+            if (eval("moje_karty.moje_" + color + "[" + j + "]") == "A" || eval("moje_karty.moje_" + color + "[" + j + "]") == "K" || eval("moje_karty.moje_" + color + "[" + j + "]") == "Q") {
+              za += 1
+            }
+            break;
+          case 4:
+            if (eval("moje_karty.moje_" + color + "[" + j + "]") == "A" || eval("moje_karty.moje_" + color + "[" + j + "]") == "K" || eval("moje_karty.moje_" + color + "[" + j + "]") == "Q" || eval("moje_karty.moje_" + color + "[" + j + "]") == "J") {
+              za += 1
+            }
+            break;
+          default:
+            za += 0
+        }
+      }
+      if (za > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function honory(kolor, ilosc) {
+      let l_h = 0
+      for (let i = 0; i < eval("moje_karty.moje_" + kolor + ".length"); i++) {
+        if (eval("moje_karty.moje_" + kolor + "[" + i + "]") == "A" || eval("moje_karty.moje_" + kolor + "[" + i + "]") == "K" || eval("moje_karty.moje_" + kolor + "[" + i + "]") == "Q" || eval("moje_karty.moje_" + kolor + "[" + i + "]") == "J") {
+          l_h++
+        }
+      }
+      if (l_h >= ilosc) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    function bilans() {
+      bilans_p += punkty;
+      console.log(bilans_p);
+      bilans_p += reka_partnera.punkty;
+      console.log(bilans_p);
+      bilans_p += (eval("reka_0.g_" + p_m_wysokosc + "_k.min_length") - 3) * 2;
+      console.log(bilans_p);
+      for (let i = 0; i < kolorki.length; i++) {
+        if (eval("moje_karty.moje_" + kolorki[i] + ".length") == 0) {
+          if (eval("moje_karty.moje_" + p_m_model + ".length") >= 4) {
+            bilans_p += 6;
+            console.log(bilans_p);
+          }
+          if (eval("moje_karty.moje_" + p_m_model + ".length") == 3) {
+            bilans_p += 3;
+            console.log(bilans_p);
+          }
+        }
+        if (eval("moje_karty.moje_" + kolorki[i] + ".length") == 1) {
+          if (eval("moje_karty.moje_" + p_m_model + ".length") >= 4) {
+            bilans_p += 4;
+            console.log(bilans_p);
+          }
+          if (eval("moje_karty.moje_" + p_m_model + ".length") == 3) {
+            bilans_p += 2;
+            console.log(bilans_p);
+          }
+        }
+        if (eval("moje_karty.moje_" + kolorki[i] + ".length") == 2) {
+          if (eval("moje_karty.moje_" + p_m_model + ".length") >= 4) {
+            bilans_p += 2;
+            console.log(bilans_p);
+          }
+          if (eval("moje_karty.moje_" + p_m_model + ".length") == 3) {
+            bilans_p += 1;
+            console.log(bilans_p);
+          }
+        }
+      }
+      lewy = Math.floor(bilans_p / 3);
+      console.log(bilans_p);
+      console.log(lewy);
+      return lewy
+    }
+
+    function melduje(co) {
+      for (let i = 0; i < meldunki.length; i++) {
+        if (meldunki[i] == co) {
+          if (co == glos_p) {
+            meldunek = i
+          } else if (i > meldunek) {
+            return i
+          } else {
+            return
+          }
+        }
+      }
+    }
+
+    function co_i_pip_robi() {
+      if (p_m_model == kolor_glosu) {
+        jego_wybor = "podniesienie";
+      } else if (p_m_model == "Bez Atu") {
+        jego_wybor = "ba";
+      } else {
+        jego_wybor = "wlasny";
+      }
+    }
+
+    ustawiamy_kary()
+    licz_pkt()
+
+  </script>
+
+  <script src="brydge_AI.js"></script>
+  <script>
+
+
+  </script>
+
+</body>
+
+</html>
